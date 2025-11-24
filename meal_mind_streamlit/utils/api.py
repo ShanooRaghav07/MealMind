@@ -1,7 +1,11 @@
 import requests
+import os
+from dotenv import load_dotenv
 
-RAPIDAPI_KEY = "aa03950e0emshbe5be62d4b8a130p10ba64jsn7ada38029b57"
-RAPIDAPI_HOST = "nutrition-calculator.p.rapidapi.com"
+load_dotenv()
+
+RAPIDAPI_KEY = os.getenv("RAPIDAPI_KEY")
+RAPIDAPI_HOST = os.getenv("RAPIDAPI_HOST")
 
 
 def get_nutrition_info_from_api(age, gender, height_cm, weight_kg, activity_level, pregnancy, lactation):
